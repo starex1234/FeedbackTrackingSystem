@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Tenant_Listing";
+    Layout = "~/Views/Shared/_ManagingLayout.cshtml";
+}
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css0">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css">
+<style>
+    table, td, th {
+        border: 1px solid #cdcdd1;
+        text-align: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    th {
+        background-color: #376195;
+        color: white;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.jqueryui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<table id="example" class="display">
+    <thead>
+        <tr>
+            <th>
+                S.No
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Property Name
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th>
+                Unit No
+            </th>
+            <th>
+                MCST Council
+            </th>
+            <th>
+                Action
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Ranosys</td>
+            <td>ranosys@gmail.com</td>
+            <td>Property Name</td>
+            <td>Ranosys</td>
+            <td>334</td>
+            <td>Yes</td>
+            <td>@Html.ActionLink("Edit", "") | @Html.ActionLink("Detail", "")</td>
+            <td>Active</td>
+        </tr>
+    </tbody>
+</table>
+
+

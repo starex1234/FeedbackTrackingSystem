@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+
+    <link rel="stylesheet" href="~/Content/Admincss/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/datatables.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/bootadmin.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css">
+    <title>Dashboard | BootAdmin</title>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <h5 style="color:white;">FEEDBACK TRACKING SYSTEM</h5>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><span class="nav-link"> Role :</span></li>
+                @if (@Session["Role"]!=null)
+                { 
+                <li class="nav-item"><span class="nav-link">@Session["Role"].ToString()</span></li>
+                }
+                <li class="nav-item dropdown">
+                @if (@Session["username"] != null)
+                { 
+                    <a href="#" id="dd_user" class="nav-link dropdown-toggle" data-toggle="dropdown">@Session["username"].ToString()</a>
+                }
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd_user">
+                       
+                        @Html.ActionLink("Logout", "Logout", new { @class = "dropdown-item" })
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="sidebar sidebar-dark bg-dark">
+            <ul class="list-unstyled">
+             
+
+                @*<li><a href="#sm_base"> Add Managing agent </a></li>
+                <li><a href="#">Managing agent listing</a></li>
+                <li><a href="#"> Edit Managing agent detail</a></li>*@
+                <li>@Html.ActionLink("Admin Home", "AdminDashboard")</li>
+
+                <li>
+                    <a href="#sm_base" data-toggle="collapse">
+
+                         Managing Agent Management
+                    </a>
+                    <ul id="sm_base" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add Managing agent", "Addagent")</li>
+                    </ul>
+
+                </li>
+                
+                <li>@Html.ActionLink("Change Password", "Changepassword")</li>
+                
+                
+            </ul>
+        </div>
+        <div class="content p-4">
+           @RenderBody()
+        </div>
+        <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.jqueryui.min.js"></script>
+
+
+</body>
+</html>

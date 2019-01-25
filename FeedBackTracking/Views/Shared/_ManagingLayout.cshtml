@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+
+    <link rel="stylesheet" href="~/Content/Admincss/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/datatables.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/Content/Admincss/bootadmin.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css">
+    <title>Dashboard | BootAdmin</title>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <h5 style="color:white;">FEEDBACK TRACKING SYSTEM</h5>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+               
+                <li class="nav-item dropdown">
+                    <a href="#" id="dd_user" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd_user">
+                      
+                        @Html.ActionLink("Logout", "Logout_M", new { @class = "dropdown-item" })
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="sidebar sidebar-dark bg-dark">
+            <ul class="list-unstyled">
+
+
+               
+                <li>
+                <a href="#sm_base" data-toggle="collapse">
+
+                    <b> MCST staff management</b>
+                </a>
+                    <ul id="sm_base" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add MCST Staff", "Add_MCST")</li>
+                        <li>@Html.ActionLink("MCST Staff Listing", "MCST_Listing")</li>
+                    </ul>
+                
+                </li>
+                <li>
+                    <a href="#Tenant" data-toggle="collapse">
+                        <b> Tenant Management</b>
+                    </a>
+                    <ul id="Tenant" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add Tenant", "Add_Tenant")</li>
+                        <li>@Html.ActionLink("Tenant Listing", "Tenant_Listing")</li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="#LongTerm" data-toggle="collapse">
+                        <b> Long term contractor management</b>
+                    </a>
+                    <ul id="LongTerm" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add Long term contractor", "Add_LTC")</li>
+                        <li>@Html.ActionLink(" Long term contractor Listing", "LTC_Listing")</li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#Feedback" data-toggle="collapse">
+                        <b>Feedback Management</b>
+                    </a>
+                    <ul id="Feedback" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add  Feedback ", "Add_FeedBack")</li>
+                        <li>@Html.ActionLink(" Feedback Listing", "FeedBack_Listing")</li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#category" data-toggle="collapse">
+                        <b> Feedback Category Management</b>
+                    </a>
+                    <ul id="category" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add Category ", "Add_Category")</li>
+                       
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#location" data-toggle="collapse">
+                        <b>Location  management</b>
+
+                    </a>
+                    <ul id="location" class="list-unstyled collapse">
+                        <li>@Html.ActionLink("Add Location ", "Add_Location")</li>
+                        
+                    </ul>
+
+                </li>
+
+
+                
+            </ul>
+        </div>
+        <div class="content p-4">
+            @RenderBody()
+        </div>
+        <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.jqueryui.min.js"></script>
+</body>
+</html>
